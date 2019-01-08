@@ -1,0 +1,37 @@
+<mat-sidenav-container autosize >
+	<mat-sidenav #sidenav class="sidenav white-text" mode="side" opened >
+		<button mat-icon-button (click)="isExpanded = !isExpanded">
+			<mat-icon *ngIf="!isExpanded && !isShowing">menu</mat-icon>
+			<mat-icon *ngIf="isExpanded || isShowing">arrow_back</mat-icon>
+		</button>
+
+		<mat-nav-list (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+
+		<mat-list-item routerLink="main" routerLinkActive="active-bg">
+				<mat-icon mat-list-icon>home</mat-icon>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Trang chủ</span>
+		</mat-list-item>
+		<mat-list-item routerLink="dashboard" routerLinkActive="active-bg">
+				<mat-icon mat-list-icon>dashboard</mat-icon>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Tổng quát</span>
+		</mat-list-item>
+		<mat-list-item routerLink="pagesmanage" routerLinkActive="active-bg">
+				<mat-icon mat-list-icon>list_alt</mat-icon>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Quản lý trang</span>
+		</mat-list-item>
+		<mat-list-item routerLink="usersmanage" routerLinkActive="active-bg">
+				<mat-icon mat-list-icon>people</mat-icon>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Quản lý nhân viên</span>
+		</mat-list-item>
+		<mat-list-item routerLink="depositmanager" routerLinkActive="active-bg">
+				<mat-icon mat-list-icon>account_balance</mat-icon>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Quản lý kí gửi</span>
+		</mat-list-item>
+</mat-nav-list>
+
+	</mat-sidenav>
+<div class="main">
+<router-outlet></router-outlet>
+</div>
+
+
